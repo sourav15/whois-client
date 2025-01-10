@@ -20,7 +20,7 @@ function App() {
 
   const submitHandler = async (data: Inputs) => {
     setIsLoading(true);
-    const response = await axios.post("http://127.0.0.1:3000/lookup", {
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/lookup`, {
       url: data.url,
     });
     setIsLoading(false);
